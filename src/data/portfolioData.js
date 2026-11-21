@@ -7,7 +7,7 @@ export const personalInfo = {
   phone: "+91-9219462953",
   email: "abhayjaiswal.work@gmail.com",
   collegeEmail: "abhay@iiitsurat.ac.in",
-  github: "https://github.com/abhayjaiswal",
+  github: "https://github.com/AJ01-dev",
   linkedin: "https://linkedin.com/in/abhayjaiswal",
   codeforces: "https://codeforces.com/profile/abhayjaiswal",
   leetcode: "https://leetcode.com/abhayjaiswal",
@@ -86,7 +86,7 @@ export const projects = [
     featured: true,
     category: "Full Stack / Distributed Systems",
     links: {
-      github: "https://github.com/abhayjaiswal/livecodehub",
+      github: "https://github.com/AJ01-dev/livecodehub",
       live: "https://livecodehub.vercel.app"
     },
     tech: ["React (Vite)", "Node.js", "Socket.IO", "Monaco Editor", "MongoDB", "Judge0 API", "Docker", "JWT", "Tailwind CSS"],
@@ -111,7 +111,7 @@ export const projects = [
     featured: true,
     category: "Full Stack / AI & Payments",
     links: {
-      github: "https://github.com/abhayjaiswal/solvenut",
+      github: "https://github.com/AJ01-dev/solvenut",
       live: "https://solvenut.vercel.app"
     },
     tech: ["React (Vite)", "Node.js", "Express.js", "MongoDB", "Socket.IO", "Razorpay", "Google Generative AI (Gemini)", "Tailwind CSS"],
