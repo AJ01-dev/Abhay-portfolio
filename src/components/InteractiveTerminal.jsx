@@ -66,6 +66,24 @@ export default function InteractiveTerminal() {
         "--> Delta received: { range: [42,1, 42,15], text: 'void dijkstra()' }",
         "[+] Persisted snapshot to MongoDB (room_id: surat-dev-collab). Status: 200 OK."
       ]
+    },
+    'cognitiverag': {
+      title: "CognitiveRAG Multi-Query & Vector Search",
+      command: "cognitiverag query --text 'Explain multi-head self-attention' --retriever mmr --top-k 3",
+      output: [
+        "[*] CognitiveRAG FastAPI engine initialized (LangChain + ChromaDB).",
+        "[*] Ingested corpus: 1,420 research chunks (MiniLM 384-dim embeddings).",
+        "--> Generating multi-query expansions via Groq LPU...",
+        "    Query 1: 'Explain multi-head self-attention mechanism'",
+        "    Query 2: 'How attention heads project Q, K, V matrices in parallel'",
+        "--> Executing MMR retrieval with diversity lambda=0.7 against ChromaDB persistent store...",
+        "[+] Retrieved 3 context chunks (Cosine distance: 0.142, 0.168, 0.194):",
+        "    - [Source: 'Attention Is All You Need.pdf', Page 4, Chunk #18]",
+        "    - [Source: 'Deep Learning Architectures.pdf', Page 112, Chunk #42]",
+        "--> Grounding synthesis with Groq LLM (Llama 3 70B, TTFT: 140ms)...",
+        "[+] Output: Multi-Head Attention linearly projects queries, keys, and values h times with learned projections.",
+        "[METRIC] 100% grounded response with exact inline source citations. Latency: 218ms."
+      ]
     }
   };
 
@@ -121,6 +139,7 @@ export default function InteractiveTerminal() {
         { type: 'out', text: "  harbor   - Simulate SWE-bench task verification" },
         { type: 'out', text: "  judge0   - Simulate C++ compilation & execution on Judge0" },
         { type: 'out', text: "  socketio - Simulate LiveCodeHub real-time Monaco room" },
+        { type: 'out', text: "  rag      - Simulate CognitiveRAG vector search & Groq synthesis" },
         { type: 'out', text: "  skills   - List technical competencies" },
         { type: 'out', text: "  stats    - View DSA & contest statistics" },
         { type: 'out', text: "  gate     - View GATE 2026 score" },
@@ -141,6 +160,11 @@ export default function InteractiveTerminal() {
 
     if (cmd.includes('socket') || cmd.includes('livecode')) {
       runSimulation('socketio');
+      return;
+    }
+
+    if (cmd.includes('rag') || cmd.includes('cognitive')) {
+      runSimulation('cognitiverag');
       return;
     }
 
@@ -263,6 +287,18 @@ export default function InteractiveTerminal() {
               >
                 <TerminalIcon className="w-3.5 h-3.5 text-emerald-400" />
                 <span>Socket.IO Sync</span>
+              </button>
+
+              <button
+                onClick={() => runSimulation('cognitiverag')}
+                className={`px-3 py-1 rounded-lg text-xs font-mono transition-all flex items-center gap-1.5 ${
+                  activeTab === 'cognitiverag'
+                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>CognitiveRAG</span>
               </button>
             </div>
 

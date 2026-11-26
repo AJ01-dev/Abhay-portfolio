@@ -17,7 +17,7 @@ export const personalInfo = {
     { label: "DSA Problems Solved", value: "550+", sub: "Graphs, DP & Trees" },
     { label: "Codeforces Max Rating", value: "1207", sub: "Pupil Division" },
     { label: "GATE 2026", value: "Qualified", sub: "Score ~340 (ECE)" },
-    { label: "Full Stack Platforms", value: "2+", sub: "LiveCodeHub & Solvenut" },
+    { label: "AI & Full-Stack Systems", value: "3+", sub: "CognitiveRAG, LiveCodeHub, Solvenut" },
   ]
 };
 
@@ -78,6 +78,31 @@ export const education = [
 ];
 
 export const projects = [
+  {
+    id: "cognitiverag",
+    title: "CognitiveRAG",
+    subtitle: "Full-Stack Technical Literature RAG System with Vector Explorer & Multi-Query Expansion",
+    period: "2026 – Present",
+    featured: true,
+    category: "AI & Vector Search / Full Stack",
+    links: {
+      github: "https://github.com/AJ01-dev/CognitiveRAG",
+      live: "https://cognitiverag.vercel.app"
+    },
+    tech: ["Python", "FastAPI", "LangChain", "ChromaDB", "Groq LPU", "MiniLM Embeddings", "React (Vite)", "Tailwind CSS", "Render", "Vercel"],
+    points: [
+      "Built a full-stack RAG system for technical books and research papers with a FastAPI + LangChain backend and React frontend, deployed on Render and Vercel.",
+      "Implemented PDF/TXT/Markdown ingestion with configurable chunking and overlap, indexing MiniLM embeddings into a persistent ChromaDB store.",
+      "Added MMR, similarity search and multi-query expansion retrieval; Groq LLM answers are grounded in retrieved context with source and page citations.",
+      "Developed an interactive vector explorer UI to inspect chunk distances and metadata, plus arXiv search integration for academic literature."
+    ],
+    architecture: {
+      frontend: "React (Vite) + Tailwind CSS + Vector Explorer UI & Chunk Distance Inspector",
+      backend: "FastAPI + LangChain Pipeline + arXiv API Integration",
+      execution: "Groq LPU Grounded Inference + MiniLM Sentence Embeddings",
+      database: "ChromaDB Persistent Store with Metadata & Distance Metrics"
+    }
+  },
   {
     id: "livecodehub",
     title: "LiveCodeHub",

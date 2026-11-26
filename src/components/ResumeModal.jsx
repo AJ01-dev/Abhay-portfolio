@@ -141,6 +141,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                   </div>
                 </div>
                 <ul className="list-disc list-outside ml-4 mt-1 space-y-1 text-xs text-neutral-700">
+                  <li><strong>CognitiveRAG</strong> – Full-stack technical literature RAG system with FastAPI, LangChain, ChromaDB, Groq, and vector explorer UI.</li>
                   <li><strong>LiveCodeHub</strong> – Real-time collaborative coding platform with Monaco Editor, Socket.IO, Judge0 API for multi-language execution.</li>
                   <li><strong>Solvenut</strong> – Expert consultation platform with JWT auth, Razorpay payments, Socket.IO chat, and Google Generative AI support.</li>
                 </ul>
@@ -169,6 +170,22 @@ export default function ResumeModal({ isOpen, onClose }) {
               Projects
             </h2>
             <div className="space-y-3">
+              <div>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="font-bold text-neutral-900">CognitiveRAG</span>
+                    <span className="text-neutral-600 text-xs italic ml-1">| Python, FastAPI, LangChain, ChromaDB, Groq, React (Vite)</span>
+                  </div>
+                  <div className="text-right text-xs font-semibold text-neutral-900">2026 – Present</div>
+                </div>
+                <ul className="list-disc list-outside ml-4 mt-1 space-y-1 text-xs text-neutral-700">
+                  <li>Built a full-stack RAG system for technical books and research papers with a FastAPI + LangChain backend and React frontend, deployed on Render and Vercel.</li>
+                  <li>Implemented PDF/TXT/Markdown ingestion with configurable chunking and overlap, indexing MiniLM embeddings into a persistent ChromaDB store.</li>
+                  <li>Added MMR, similarity search and multi-query expansion retrieval; Groq LLM answers are grounded in retrieved context with source and page citations.</li>
+                  <li>Developed a vector explorer UI to inspect chunk distances and metadata, plus arXiv search integration for academic literature.</li>
+                </ul>
+              </div>
+
               <div>
                 <div className="flex justify-between items-start">
                   <div>
